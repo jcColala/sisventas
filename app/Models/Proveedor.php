@@ -18,4 +18,7 @@ class Proveedor extends Model
     public function productos(){
         return $this->hasMany(Producto::class);
     }
+    public function materias(){
+        return $this->hasMany(Materia::class);
+    }
 }

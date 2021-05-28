@@ -33,37 +33,42 @@
         <div class="app-sidebar__inner">
             <ul class="vertical-nav-menu">
                 <li class="app-sidebar__heading">Menu</li>
-                <li>
-                    <a href="#">
-                        <i class="metismenu-icon pe-7s-browser"></i>Mantenimiento
+                <li class="{{request()->routeIs('categorias.*') ? 'mm-active':''}} {{request()->routeIs('proveedors.*') ? 'mm-active':''}} {{request()->routeIs('materias.*') ? 'mm-active':''}}">
+                    <a href="#" aria-expanded="true">
+                        <i class="metismenu-icon pe-7s-browser"></i>Materia Prima
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul>
                         <li>
-                            <a href="{{route('categorias.index')}}" >
+                            <a href="{{route('categorias.index')}}" class="{{request()->routeIs('categorias.*') ? 'mm-active':''}}">
                                 <i class="metismenu-icon"></i> Categorias
                             </a>
                         </li>
                         <li>
-                            <a href="{{route('proveedors.index')}}" >
+                            <a href="{{route('proveedors.index')}}" class="{{request()->routeIs('proveedors.*') ? 'mm-active':''}}">
                                 <i class="metismenu-icon"></i> Proveedor
                             </a>
                         </li>
                         <li>
+                            <a href="{{route('materias.index')}}" class="{{request()->routeIs('materias.*') ? 'mm-active':''}}">
+                                <i class="metismenu-icon"></i> Materia Prima
+                            </a>
+                        </li>
+                        {{-- <li>
                             <a href="{{route('clientes.index')}}" >
                                 <i class="metismenu-icon"></i> Clientes
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
-                <li>
-                    <a href="#">
+                <li class="{{request()->routeIs('productos.*') ? 'mm-active':''}}">
+                    <a href="#" aria-expanded="true">
                         <i class="metismenu-icon pe-7s-plugin"></i>Almacen
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul>
                         <li>
-                            <a href="{{route('productos.index')}}" >
+                            <a href="{{route('productos.index')}}" class="{{request()->routeIs('productos.*') ? 'mm-active':''}}" >
                                 <i class="metismenu-icon"></i>Productos
                             </a>
                         </li>
